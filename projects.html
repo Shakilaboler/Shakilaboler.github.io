@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shakila Boler Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="import" href="social-icons.html" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Shakila Boler Projects</a>
+      <nav class="navbar">
+        <a href="index.html" style="--i: 1">Home</a>
+        <a href="projects.html" style="--i: 4" class="active">Projects</a>
+        <a href="contact.html" style="--i: 5">Contact</a>
+      </nav>
+    </header>
+
+    <section class="home">
+      <div id="social-icons-placeholder"></div>
+      <div class="project">
+        <img src="TwiiterAPI.jpg" alt="Twitter API" />
+        <h2>Twitter API</h2>
+        <p>
+          Engineered an API that ensures a seamless and intuitive experience for
+          developers, enhancing adoption and user satisfaction.
+          <br />
+          <br />
+          <br />
+        </p>
+        <a href="https://github.com/your-username/project1" target="_blank"
+          >GitHub Repo</a
+        >
+      </div>
+
+      <div class="project">
+        <img src="lemonadestand.jpg" alt="Lemonade Stand API" />
+        <h2>Lemonade Stand API</h2>
+        <p>
+          Developed a comprehensive API for managing lemonade stand operations,
+          leveraging Java's capabilities for efficient and structured code.
+          <br />
+          <br />
+        </p>
+        <a href="https://github.com/your-username/project1" target="_blank"
+          >GitHub Repo</a
+        >
+      </div>
+
+      <div class="project">
+        <img src="HospitalBooking.jpg" alt="Hospital Booking System" />
+        <h2>Hospital Booking System</h2>
+        <p>
+          Utilized Java, HTML, CSS, and SQL to spearhead the development of a
+          groundbreaking patient appointment system, seamlessly integrating
+          patient and doctor input.
+          <br />
+        </p>
+        <a
+          href="https://github.com/Shakilaboler/portfolio-project-booking-system"
+          target="_blank"
+          >GitHub Repo</a
+        >
+      </div>
+
+      <div class="project">
+        <img src="gameRanker.png" alt="Game Ranking System" />
+        <h2>Game Ranking System</h2>
+        <p>
+          Engineered an innovative game ranker software that revolutionized the
+          gaming community by providing visually captivating insights into
+          popular releases.
+          <br />
+          <br />
+        </p>
+        <a
+          href="https://github.com/Shakilaboler/portfolio-project-ranking-system"
+          target="_blank"
+          >GitHub Repo</a
+        >
+      </div>
+
+      <!-- Add more projects as needed -->
+    </section>
+
+    <script src="app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("social-icons.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("social-icons-placeholder").innerHTML =
+              data;
+          });
+      });
+    </script>
+  </body>
+</html>

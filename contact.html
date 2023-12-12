@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shakila Boler Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="import" href="social-icons.html" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Shakila Boler Contact</a>
+      <nav class="navbar">
+        <a href="index.html" style="--i: 1">Home</a>
+        <a href="projects.html" style="--i: 4">Projects</a>
+        <a href="contact.html" style="--i: 5" class="active">Contact</a>
+      </nav>
+    </header>
+    <section class="home">
+      <div id="social-icons-placeholder"></div>
+      <div class="home-img">
+        <div class="glowing-square">
+          <span></span>
+          <span></span>
+          <div class="image">
+            <img src="Home.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="contact-content">
+        <h1>Contact</h1>
+        <p>
+          If you have any questions or inquiries, feel free to contact me using
+          the form below:
+        </p>
+        <form id="contactForm" onsubmit="sendEmail(); return false;">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+        <div id="messageDiv"></div>
+      </div>
+    </section>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("DTfZItrLZrAXgAYye");
+      })();
+
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("social-icons.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("social-icons-placeholder").innerHTML =
+              data;
+          });
+      });
+
+      function sendEmail() {
+        const form = document.getElementById("contactForm");
+        const messageDiv = document.getElementById("messageDiv");
+
+        if (form) {
+          const name = form.querySelector("#name").value;
+          const email = form.querySelector("#email").value;
+          const message = form.querySelector("#message").value;
+
+          emailjs.sendForm("service_9onoogo", "template_pfjb09s", form).then(
+            function (response) {
+              console.log("Email sent:", response);
+              messageDiv.innerHTML =
+                "<p>Email sent successfully! Shakila will be in touch!</p>";
+              form.reset();
+            },
+            function (error) {
+              console.error("Error sending email:", error);
+              messageDiv.innerHTML =
+                "<p>Error sending email. Please try again.</p>";
+            }
+          );
+        } else {
+          console.error("Form element not found");
+        }
+      }
+    </script>
+  </body>
+</html>

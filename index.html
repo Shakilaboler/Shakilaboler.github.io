@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shakila Boler Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="import" href="social-icons.html" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Shakila Boler Portfolio</a>
+
+      <nav class="navbar">
+        <a href="index.html" style="--i: 1" class="active">Home</a>
+        <a href="projects.html" style="--i: 4">Projects</a>
+        <a href="contact.html" style="--i: 5">Contact</a>
+      </nav>
+    </header>
+
+    <section class="home">
+      <div id="social-icons-placeholder"></div>
+      <div class="home-content">
+        <h1>Hi, I'm Shakila Boler</h1>
+        <h3>Backend Developer</h3>
+        <p id="bio"></p>
+        <a
+          href="ShakilaBoler_SDE_Resume.pdf"
+          download="Shakila Boler SDE Resume.pdf"
+          class="btn"
+          >Download Resume</a
+        >
+      </div>
+
+      <div class="home-img">
+        <div class="glowing-square">
+          <span></span>
+          <span></span>
+          <div class="image">
+            <img id="avatar" alt="GitHub Avatar" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("social-icons.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("social-icons-placeholder").innerHTML =
+              data;
+          });
+      });
+    </script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
