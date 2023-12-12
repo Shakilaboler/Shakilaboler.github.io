@@ -15,7 +15,6 @@ const fetchUserData = async () => {
   }
 };
 
-// Update portfolio with GitHub user data
 const updatePortfolio = (userData) => {
   const avatar = document.getElementById("avatar");
   const bio = document.getElementById("bio");
@@ -24,5 +23,4 @@ const updatePortfolio = (userData) => {
   bio.textContent = userData.bio;
 };
 
-// Call fetchUserData when the page loads
 window.addEventListener("load", fetchUserData);
